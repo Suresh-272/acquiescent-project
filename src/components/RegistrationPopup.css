@@ -1,0 +1,131 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-container {
+  background-color: var(--white);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: popup 0.3s ease-out;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popup-header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.popup-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 576px) {
+  .popup-container {
+    width: 95%;
+  }
+
+  .popup-header {
+    padding: 15px;
+  }
+
+  .popup-header h2 {
+    font-size: 20px;
+  }
+
+  .popup-body {
+    padding: 15px;
+  }
+}
+
