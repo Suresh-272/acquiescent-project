@@ -1,140 +1,106 @@
-import { Link } from "react-router-dom"
-import "./Footer.css"
+import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Start learning today</h2>
-            <div className="cta-buttons">
-              <Link to="/courses" className="btn">
-                View All Courses
-              </Link>
-              <Link to="/contact" className="btn btn-outline">
-                Contact Us
-              </Link>
-            </div>
+    <footer style={{
+      backgroundColor: '#1a1a2e',
+      color: '#fff',
+      padding: '3rem 0',
+      fontFamily: 'Poppins, sans-serif',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '2rem',
+      }}>
+        <div style={{ animation: 'fadeIn 0.8s ease-in' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', position: 'relative' }}>About Us</h3>
+          <p style={{ lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            We are dedicated to providing quality education and resources to help you achieve your goals.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            {['facebook', 'twitter', 'instagram', 'linkedin'].map(icon => (
+              <a key={icon} href={`#${icon}`} style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                backgroundColor: '#16213e',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'transform 0.3s, background-color 0.3s',
+                ':hover': { transform: 'translateY(-5px)', backgroundColor: '#0f3460' }
+              }}>
+                <i className={`fab fa-${icon}`}></i>
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <div style={{ animation: 'fadeIn 0.8s ease-in 0.2s both' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Quick Links</h3>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {['Home', 'About', 'Courses', 'Blog', 'Contact'].map(link => (
+              <li key={link} style={{ marginBottom: '0.8rem' }}>
+                <a href={`/${link.toLowerCase()}`} style={{
+                  color: '#ddd',
+                  textDecoration: 'none',
+                  transition: 'color 0.3s, transform 0.3s',
+                  display: 'inline-block',
+                  ':hover': { color: '#fff', transform: 'translateX(5px)' }
+                }}>
+                  <span style={{ marginRight: '0.5rem' }}>›</span> {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <div style={{ animation: 'fadeIn 0.8s ease-in 0.4s both' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Contact Info</h3>
+          <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
+            <i className="fas fa-map-marker-alt" style={{ marginRight: '1rem', marginTop: '0.3rem' }}></i>
+            <p>123 Education St, Learning City, ED 12345</p>
+          </div>
+          <div style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center' }}>
+            <i className="fas fa-phone" style={{ marginRight: '1rem' }}></i>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <i className="fas fa-envelope" style={{ marginRight: '1rem' }}></i>
+            <p>info@learningplatform.com</p>
           </div>
         </div>
       </div>
-
-      <div className="footer-main">
-        <div className="container">
-          <div className="footer-grid">
-            <div className="footer-about">
-              <div className="footer-logo">
-                <img
-                  src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=50&fit=crop&crop=edges"
-                  alt="Company Logo"
-                />
-              </div>
-              <p>
-                We are a leading training and consulting company providing expert guidance in various technologies to
-                help professionals advance their careers.
-              </p>
-              <Link to="/contact" className="contact-btn">
-                Contact With Us
-              </Link>
-            </div>
-
-            <div className="footer-links">
-              <h3>Our Courses</h3>
-              <ul>
-                <li>
-                  <Link to="/courses/java">Java</Link>
-                </li>
-                <li>
-                  <Link to="/courses/software-testing">Software Testing</Link>
-                </li>
-                <li>
-                  <Link to="/courses/apache-kafka">Apache Kafka</Link>
-                </li>
-                <li>
-                  <Link to="/courses/devops">DevOps</Link>
-                </li>
-                <li>
-                  <Link to="/courses/salesforce">Salesforce</Link>
-                </li>
-                <li>
-                  <Link to="/courses/python">Python</Link>
-                </li>
-                <li>
-                  <Link to="/courses/power-bi">Power BI</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="footer-links">
-              <h3>Useful Links</h3>
-              <ul>
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/courses">All Courses</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact Us</Link>
-                </li>
-                <li>
-                  <Link to="/faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link to="/terms">Terms and Conditions</Link>
-                </li>
-                <li>
-                  <Link to="/privacy">Privacy Policy</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="footer-contact">
-              <h3>Get Contact</h3>
-              <ul>
-                <li>
-                  <span>Phone:</span>
-                  <a href="tel:+919177089287">+91 91770 89287</a> /<a href="tel:+919059318889">+91 90593 18889</a>
-                </li>
-                <li>
-                  <span>E-mail:</span>
-                  <a href="mailto:info@company.com">info@company.com</a>
-                </li>
-                <li>
-                  <span>Location:</span>
-                  <a href="https://goo.gl/maps/1234" target="_blank" rel="noopener noreferrer">
-                    Plot No. 26, Ground Floor, Tech Park, Business District, City - 500032
-                  </a>
-                </li>
-              </ul>
-              <div className="social-icons">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <div style={{
+        borderTop: '1px solid #333',
+        marginTop: '2rem',
+        paddingTop: '1.5rem',
+        textAlign: 'center',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '1.5rem 2rem 0',
+      }}>
+        <p>&copy; {new Date().getFullYear()} Learning Platform. All rights reserved.</p>
       </div>
-
-      <div className="footer-bottom">
-        <div className="container">
-          <p>Copyright © {new Date().getFullYear()} All Rights Reserved.</p>
-        </div>
-      </div>
+      
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        a:hover {
+          color: #fff;
+          transform: translateX(5px);
+        }
+      `}</style>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;
