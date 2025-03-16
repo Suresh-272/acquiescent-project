@@ -24,7 +24,7 @@ function App() {
       <div className="app">
         <Navbar toggleRegistration={toggleRegistration} />
         <Routes>
-          <Route path="/" element={<Home toggleRegistration={toggleRegistration} />} />
+          <Route path="/home" element={<Home toggleRegistration={toggleRegistration} />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses toggleRegistration={toggleRegistration} />} />
           <Route path="/blog" element={<Blog />} />
