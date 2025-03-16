@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../assets/logo.png';
 
 
 const Navbar = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
       <NavContent>
         <LogoContainer>
           <LogoLink to="/" isScrolled={isScrolled}>
-            <LogoSpan>Learn</LogoSpan>Platform
+            <img src={logo} alt="Aquiscent Logo" style={{ height: '40px' }} />
           </LogoLink>
         </LogoContainer>
         
